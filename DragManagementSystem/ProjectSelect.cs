@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DragManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class ProjectSelect : Form
     {
-        public Form1()
+        public ProjectSelect()
         {
             InitializeComponent();
         }
