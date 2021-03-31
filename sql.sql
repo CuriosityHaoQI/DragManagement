@@ -18,13 +18,13 @@ CREATE TABLE tb_User
 		CHAR(10)
 		NOT NULL
 		PRIMARY KEY
-	,Nam
+	,Name
 		CHAR(10)
 		NOT NULL		
 	,Password
 		VARBINARY(128)
 		NOT NULL);
 INSERT tb_User
-	(No,Name£¨Password)
+	(No,Name,Password)
 	VALUES
-	('3190707001','’≈∫∆∆Ê£¨HASHBYTES('MD5','7001'));
+	('3190707001','’≈∫∆∆Ê',HASHBYTES('MD5','7001'));
