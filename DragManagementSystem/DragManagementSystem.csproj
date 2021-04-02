@@ -59,11 +59,11 @@
       <DependentUpon>frm_SignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProjectSelect.cs">
+    <Compile Include="frm_ProjectSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProjectSelect.Designer.cs">
-      <DependentUpon>ProjectSelect.cs</DependentUpon>
+    <Compile Include="frm_ProjectSelect.Designer.cs">
+      <DependentUpon>frm_ProjectSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_LogIn.resx">
@@ -72,8 +72,8 @@
     <EmbeddedResource Include="frm_SignUp.resx">
       <DependentUpon>frm_SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProjectSelect.resx">
-      <DependentUpon>ProjectSelect.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ProjectSelect.resx">
+      <DependentUpon>frm_ProjectSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
