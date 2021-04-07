@@ -86,6 +86,7 @@
             this.txb_Password.Font = new System.Drawing.Font("宋体", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txb_Password.Location = new System.Drawing.Point(516, 374);
             this.txb_Password.Name = "txb_Password";
+            this.txb_Password.PasswordChar = '*';
             this.txb_Password.Size = new System.Drawing.Size(376, 68);
             this.txb_Password.TabIndex = 9;
             // 
@@ -122,7 +123,7 @@
             this.Controls.Add(this.txb_UserNo);
             this.Controls.Add(this.lbl_LogIn);
             this.Name = "frm_LogIn";
-            this.Text = "frm_LogIn";
+            this.Text = "登陆";
             this.ResumeLayout(false);
             this.PerformLayout();
 

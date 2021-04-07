@@ -29,5 +29,12 @@ namespace DragManagementSystem
         {
             this.lbl_UserName.Text = this._UserName+this._UserNo;
         }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            frm_info _Info = new frm_info(this._UserNo,this._UserName);
+            _Info.Show();
+            this.Hide();
+        }
     }
 }

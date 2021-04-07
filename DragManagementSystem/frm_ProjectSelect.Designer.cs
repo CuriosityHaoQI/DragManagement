@@ -49,6 +49,7 @@
             this.btn_Info.TabIndex = 1;
             this.btn_Info.Text = "个人中心";
             this.btn_Info.UseVisualStyleBackColor = true;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
             // 
             // frm_ProjectSelect
             // 
