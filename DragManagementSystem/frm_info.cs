@@ -35,15 +35,23 @@ namespace DragManagementSystem
             sqlCommand.Parameters.AddWithValue("@No", this._UserNo);
             sqlConnection.Open();
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            byte[] photoBytes = null;
             if (sqlDataReader.Read())
             {
-                this.txb_Name.Text = _UserName;
+                this.txb_Name.Text = _UserName.ToString().Trim();
                 this.txb_No.Text = _UserNo;  
                 this.rdb_Boy.Checked = (bool)sqlDataReader["Gender"];
                 this.rdb_Girl.Checked = !rdb_Boy.Checked;
                 this.dtp_Birthday.Value = (DateTime)sqlDataReader["BirthDate"];
+                photoBytes =
+                    (sqlDataReader["Photo"] == DBNull.Value ? null : (byte[])sqlDataReader["Photo"]);
             }
-            sqlDataReader.Close();    
+            sqlDataReader.Close();
+            if (photoBytes != null)
+            {
+                MemoryStream memoryStream = new MemoryStream(photoBytes);
+                this.pcb_Picture.Image = Image.FromStream(memoryStream);
+            }
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
@@ -68,6 +76,30 @@ namespace DragManagementSystem
                 string fileName = openPhotoDialog.FileName;
                 this.pcb_Picture.Image = Image.FromFile(fileName);
             }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            this.pcb_Picture.Image.Save(memoryStream, ImageFormat.Bmp);
+            byte[] photoBytes = new byte[memoryStream.Length];
+            memoryStream.Seek(0, SeekOrigin.Begin);
+            memoryStream.Read(photoBytes, 0, photoBytes.Length);
+            SqlConnection sqlConnection = new SqlConnection();                                          //声明并实例化SQL连接；
+            sqlConnection.ConnectionString =
+                "Server=(local);Database=DrugManagement;Integrated Security=sspi";                         //在字符串变量中，描述连接字符串所需的服务器地址、数据库名称、集成安全性（即是否使用Windows验证）；
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText =
+                "UPDATE tb_User"
+                + " SET Name=@Name,Gender=@Gender,BirthDate=@BirthDate,Photo=@Photo";
+            sqlCommand.Parameters.AddWithValue("@Name", this.txb_Name.Text.Trim());
+            sqlCommand.Parameters.AddWithValue("@Gender", this.rdb_Boy.Checked);
+            sqlCommand.Parameters.AddWithValue("@BirthDate", this.dtp_Birthday.Value);
+            sqlCommand.Parameters.AddWithValue("@Photo", photoBytes);
+            sqlConnection.Open();
+            int rowAffected = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            MessageBox.Show($"更新{rowAffected}行。");
         }
     }
 }

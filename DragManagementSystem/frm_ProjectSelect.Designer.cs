@@ -30,6 +30,7 @@
         {
             this.lbl_UserName = new System.Windows.Forms.Label();
             this.btn_Info = new System.Windows.Forms.Button();
+            this.btn_Repertory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_UserName
@@ -51,11 +52,22 @@
             this.btn_Info.UseVisualStyleBackColor = true;
             this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
             // 
+            // btn_Repertory
+            // 
+            this.btn_Repertory.Location = new System.Drawing.Point(199, 76);
+            this.btn_Repertory.Name = "btn_Repertory";
+            this.btn_Repertory.Size = new System.Drawing.Size(152, 51);
+            this.btn_Repertory.TabIndex = 2;
+            this.btn_Repertory.Text = "库存查询";
+            this.btn_Repertory.UseVisualStyleBackColor = true;
+            this.btn_Repertory.Click += new System.EventHandler(this.btn_Repertory_Click);
+            // 
             // frm_ProjectSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1792, 990);
+            this.Controls.Add(this.btn_Repertory);
             this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.lbl_UserName);
             this.Name = "frm_ProjectSelect";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.Label lbl_UserName;
         private System.Windows.Forms.Button btn_Info;
+        private System.Windows.Forms.Button btn_Repertory;
     }
 }

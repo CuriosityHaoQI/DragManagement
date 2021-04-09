@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_info));
             this.pcb_Picture = new System.Windows.Forms.PictureBox();
             this.lbl_pic = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
@@ -47,10 +48,13 @@
             // 
             // pcb_Picture
             // 
+            this.pcb_Picture.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pcb_Picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcb_Picture.BackgroundImage")));
             this.pcb_Picture.Location = new System.Drawing.Point(73, 60);
-            this.pcb_Picture.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pcb_Picture.Margin = new System.Windows.Forms.Padding(8);
             this.pcb_Picture.Name = "pcb_Picture";
             this.pcb_Picture.Size = new System.Drawing.Size(600, 600);
+            this.pcb_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Picture.TabIndex = 0;
             this.pcb_Picture.TabStop = false;
             // 
@@ -58,7 +62,7 @@
             // 
             this.lbl_pic.AutoSize = true;
             this.lbl_pic.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_pic.Location = new System.Drawing.Point(271, 689);
+            this.lbl_pic.Location = new System.Drawing.Point(276, 668);
             this.lbl_pic.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl_pic.Name = "lbl_pic";
             this.lbl_pic.Size = new System.Drawing.Size(226, 50);
@@ -91,7 +95,7 @@
             // 
             this.txb_Name.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txb_Name.Location = new System.Drawing.Point(925, 122);
-            this.txb_Name.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txb_Name.Margin = new System.Windows.Forms.Padding(8);
             this.txb_Name.Name = "txb_Name";
             this.txb_Name.Size = new System.Drawing.Size(416, 65);
             this.txb_Name.TabIndex = 4;
@@ -100,8 +104,9 @@
             // 
             this.txb_No.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txb_No.Location = new System.Drawing.Point(925, 225);
-            this.txb_No.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txb_No.Margin = new System.Windows.Forms.Padding(8);
             this.txb_No.Name = "txb_No";
+            this.txb_No.ReadOnly = true;
             this.txb_No.Size = new System.Drawing.Size(416, 65);
             this.txb_No.TabIndex = 5;
             // 
@@ -121,7 +126,7 @@
             this.rdb_Boy.AutoSize = true;
             this.rdb_Boy.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rdb_Boy.Location = new System.Drawing.Point(925, 350);
-            this.rdb_Boy.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.rdb_Boy.Margin = new System.Windows.Forms.Padding(8);
             this.rdb_Boy.Name = "rdb_Boy";
             this.rdb_Boy.Size = new System.Drawing.Size(109, 54);
             this.rdb_Boy.TabIndex = 7;
@@ -134,7 +139,7 @@
             this.rdb_Girl.AutoSize = true;
             this.rdb_Girl.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rdb_Girl.Location = new System.Drawing.Point(1092, 350);
-            this.rdb_Girl.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.rdb_Girl.Margin = new System.Windows.Forms.Padding(8);
             this.rdb_Girl.Name = "rdb_Girl";
             this.rdb_Girl.Size = new System.Drawing.Size(109, 54);
             this.rdb_Girl.TabIndex = 8;
@@ -146,7 +151,7 @@
             // 
             this.dtp_Birthday.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dtp_Birthday.Location = new System.Drawing.Point(925, 452);
-            this.dtp_Birthday.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.dtp_Birthday.Margin = new System.Windows.Forms.Padding(8);
             this.dtp_Birthday.Name = "dtp_Birthday";
             this.dtp_Birthday.Size = new System.Drawing.Size(416, 67);
             this.dtp_Birthday.TabIndex = 9;
@@ -166,12 +171,13 @@
             // 
             this.btn_Update.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_Update.Location = new System.Drawing.Point(819, 599);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(8);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(215, 84);
             this.btn_Update.TabIndex = 11;
-            this.btn_Update.Text = "修改";
+            this.btn_Update.Text = "更新 ";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Back
             // 
@@ -187,9 +193,9 @@
             // btn_Upload
             // 
             this.btn_Upload.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_Upload.Location = new System.Drawing.Point(215, 776);
+            this.btn_Upload.Location = new System.Drawing.Point(232, 721);
             this.btn_Upload.Name = "btn_Upload";
-            this.btn_Upload.Size = new System.Drawing.Size(318, 84);
+            this.btn_Upload.Size = new System.Drawing.Size(318, 67);
             this.btn_Upload.TabIndex = 13;
             this.btn_Upload.Text = "上传个人照片";
             this.btn_Upload.UseVisualStyleBackColor = true;
@@ -199,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1668, 1125);
+            this.ClientSize = new System.Drawing.Size(1822, 1145);
             this.Controls.Add(this.btn_Upload);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Update);
@@ -214,7 +220,7 @@
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.lbl_pic);
             this.Controls.Add(this.pcb_Picture);
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "frm_info";
             this.Text = "个人信息";
             this.Load += new System.EventHandler(this.frm_info_Load);

@@ -36,5 +36,12 @@ namespace DragManagementSystem
             _Info.Show();
             this.Hide();
         }
+
+        private void btn_Repertory_Click(object sender, EventArgs e)
+        {
+            frm_Repertory _Repertory = new frm_Repertory();
+            _Repertory.Show();
+            this.Hide();
+        }
     }
 }
