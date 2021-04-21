@@ -124,6 +124,7 @@
             this.Controls.Add(this.lbl_LogIn);
             this.Name = "frm_LogIn";
             this.Text = "登陆";
+            this.Load += new System.EventHandler(this.frm_LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

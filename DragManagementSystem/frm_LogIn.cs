@@ -88,5 +88,12 @@ namespace DragManagementSystem
                 MessageBox.Show(ex.Message, "输入错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void frm_LogIn_Load(object sender, EventArgs e)
+        {
+            this.txb_UserNo.Text = "3190707003";
+            this.txb_Password.Text = "7003";
+        
+        }
     }
 }
