@@ -223,6 +223,7 @@
             this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "frm_info";
             this.Text = "个人信息";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_info_FormClosed);
             this.Load += new System.EventHandler(this.frm_info_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Picture)).EndInit();
             this.ResumeLayout(false);

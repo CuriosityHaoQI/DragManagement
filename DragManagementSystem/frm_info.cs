@@ -101,5 +101,11 @@ namespace DragManagementSystem
             sqlConnection.Close();
             MessageBox.Show($"更新{rowAffected}行。");
         }
+
+        private void frm_info_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm_ProjectSelect _ProjectSelect = new frm_ProjectSelect(_UserNo,_UserName);
+            _ProjectSelect.Show();
+        }
     }
 }

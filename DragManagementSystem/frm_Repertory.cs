@@ -18,6 +18,13 @@ namespace DragManagementSystem
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+        private string _UserNo;
+        private string _UserName;
+        public frm_Repertory(string UserNo, string UserName) : this()
+        {
+            this._UserName = UserName;
+            this._UserNo = UserNo;
+        }
         private DateTime validity;
 
         private void btn_Cardinal_Click(object sender, EventArgs e)
@@ -158,6 +165,13 @@ namespace DragManagementSystem
             this.lbl_deadline.Text = "尚未出库的药品";
             this.gdb_Validity.Text = "滞留药品管理";
             this.dgv_Validity.DataSource = null;
+        }
+
+        private void frm_Repertory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            frm_ProjectSelect _ProjectSelect = new frm_ProjectSelect(_UserNo, _UserName);
+            _ProjectSelect.Show();
         }
     }
 }

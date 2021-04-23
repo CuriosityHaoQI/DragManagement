@@ -39,9 +39,15 @@ namespace DragManagementSystem
 
         private void btn_Repertory_Click(object sender, EventArgs e)
         {
-            frm_Repertory _Repertory = new frm_Repertory();
+            frm_Repertory _Repertory = new frm_Repertory(_UserNo,_UserName);
             _Repertory.Show();
             this.Hide();
+        }
+
+        private void btn_Order_Click(object sender, EventArgs e)
+        {
+            frm_PlanningOrder _PlanningOrder = new frm_PlanningOrder();
+            _PlanningOrder.Show();
         }
     }
 }

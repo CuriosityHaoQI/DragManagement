@@ -58,6 +58,12 @@
     <Compile Include="frm_LogIn.Designer.cs">
       <DependentUpon>frm_LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_PlanningOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PlanningOrder.Designer.cs">
+      <DependentUpon>frm_PlanningOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Repertory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_LogIn.resx">
       <DependentUpon>frm_LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PlanningOrder.resx">
+      <DependentUpon>frm_PlanningOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Repertory.resx">
       <DependentUpon>frm_Repertory.cs</DependentUpon>

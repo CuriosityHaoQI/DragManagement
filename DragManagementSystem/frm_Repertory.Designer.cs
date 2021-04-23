@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpb_Repertory = new System.Windows.Forms.GroupBox();
+            this.btn_Outbase = new System.Windows.Forms.Button();
             this.btn_Validity = new System.Windows.Forms.Button();
             this.btn_UpperLimit = new System.Windows.Forms.Button();
             this.btn_LowerLimit = new System.Windows.Forms.Button();
@@ -40,12 +41,11 @@
             this.gpb_Cardinal = new System.Windows.Forms.GroupBox();
             this.gdv_DrugCardinal = new System.Windows.Forms.DataGridView();
             this.gdb_Validity = new System.Windows.Forms.GroupBox();
+            this.dtp_outbase = new System.Windows.Forms.DateTimePicker();
+            this.dgv_Validity = new System.Windows.Forms.DataGridView();
             this.lbl_deadline = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtp_Validity = new System.Windows.Forms.DateTimePicker();
-            this.dgv_Validity = new System.Windows.Forms.DataGridView();
-            this.btn_Outbase = new System.Windows.Forms.Button();
-            this.dtp_outbase = new System.Windows.Forms.DateTimePicker();
             this.gpb_Repertory.SuspendLayout();
             this.gpb_Cardinal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdv_DrugCardinal)).BeginInit();
@@ -68,6 +68,17 @@
             this.gpb_Repertory.TabIndex = 0;
             this.gpb_Repertory.TabStop = false;
             this.gpb_Repertory.Text = "库存查询";
+            // 
+            // btn_Outbase
+            // 
+            this.btn_Outbase.Location = new System.Drawing.Point(4, 424);
+            this.btn_Outbase.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Outbase.Name = "btn_Outbase";
+            this.btn_Outbase.Size = new System.Drawing.Size(230, 72);
+            this.btn_Outbase.TabIndex = 4;
+            this.btn_Outbase.Text = "滞留药品管理";
+            this.btn_Outbase.UseVisualStyleBackColor = true;
+            this.btn_Outbase.Click += new System.EventHandler(this.btn_Outbase_Click);
             // 
             // btn_Validity
             // 
@@ -128,23 +139,23 @@
             // gdv_DrugCardinal
             // 
             this.gdv_DrugCardinal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdv_DrugCardinal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdv_DrugCardinal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gdv_DrugCardinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdv_DrugCardinal.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdv_DrugCardinal.DefaultCellStyle = dataGridViewCellStyle2;
             this.gdv_DrugCardinal.Location = new System.Drawing.Point(15, 71);
             this.gdv_DrugCardinal.Margin = new System.Windows.Forms.Padding(8);
             this.gdv_DrugCardinal.Name = "gdv_DrugCardinal";
@@ -165,6 +176,41 @@
             this.gdb_Validity.TabIndex = 1;
             this.gdb_Validity.TabStop = false;
             this.gdb_Validity.Text = "有效期管理";
+            // 
+            // dtp_outbase
+            // 
+            this.dtp_outbase.Font = new System.Drawing.Font("宋体", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dtp_outbase.Location = new System.Drawing.Point(443, 53);
+            this.dtp_outbase.Name = "dtp_outbase";
+            this.dtp_outbase.Size = new System.Drawing.Size(375, 68);
+            this.dtp_outbase.TabIndex = 4;
+            this.dtp_outbase.ValueChanged += new System.EventHandler(this.dtp_outbase_ValueChanged);
+            // 
+            // dgv_Validity
+            // 
+            this.dgv_Validity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Validity.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Validity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Validity.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Validity.Location = new System.Drawing.Point(24, 138);
+            this.dgv_Validity.Name = "dgv_Validity";
+            this.dgv_Validity.RowTemplate.Height = 44;
+            this.dgv_Validity.Size = new System.Drawing.Size(1442, 507);
+            this.dgv_Validity.TabIndex = 3;
             // 
             // lbl_deadline
             // 
@@ -195,52 +241,6 @@
             this.dtp_Validity.TabIndex = 0;
             this.dtp_Validity.ValueChanged += new System.EventHandler(this.dtp_Validity_ValueChanged);
             // 
-            // dgv_Validity
-            // 
-            this.dgv_Validity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Validity.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgv_Validity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Validity.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgv_Validity.Location = new System.Drawing.Point(24, 138);
-            this.dgv_Validity.Name = "dgv_Validity";
-            this.dgv_Validity.RowTemplate.Height = 44;
-            this.dgv_Validity.Size = new System.Drawing.Size(1442, 507);
-            this.dgv_Validity.TabIndex = 3;
-            // 
-            // btn_Outbase
-            // 
-            this.btn_Outbase.Location = new System.Drawing.Point(4, 424);
-            this.btn_Outbase.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Outbase.Name = "btn_Outbase";
-            this.btn_Outbase.Size = new System.Drawing.Size(230, 72);
-            this.btn_Outbase.TabIndex = 4;
-            this.btn_Outbase.Text = "滞留药品管理";
-            this.btn_Outbase.UseVisualStyleBackColor = true;
-            this.btn_Outbase.Click += new System.EventHandler(this.btn_Outbase_Click);
-            // 
-            // dtp_outbase
-            // 
-            this.dtp_outbase.Font = new System.Drawing.Font("宋体", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtp_outbase.Location = new System.Drawing.Point(443, 53);
-            this.dtp_outbase.Name = "dtp_outbase";
-            this.dtp_outbase.Size = new System.Drawing.Size(375, 68);
-            this.dtp_outbase.TabIndex = 4;
-            this.dtp_outbase.ValueChanged += new System.EventHandler(this.dtp_outbase_ValueChanged);
-            // 
             // frm_Repertory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
@@ -253,6 +253,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Repertory";
             this.Text = "库存查询";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_Repertory_FormClosed);
             this.Load += new System.EventHandler(this.frm_Repertory_Load);
             this.gpb_Repertory.ResumeLayout(false);
             this.gpb_Cardinal.ResumeLayout(false);
