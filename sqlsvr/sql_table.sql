@@ -1,5 +1,7 @@
 USE DrugManagement
 --用户表
+USE DrugManagement
+--用户表
 DROP TABLE IF EXISTS tb_User; 					
 CREATE TABLE tb_User
 	(No
@@ -29,7 +31,8 @@ INSERT tb_User
 DROP TABLE IF EXISTS tb_Drug; 
 CREATE TABLE tb_Drug
 	(No
-		CHAR(10)
+		INT
+		IDENTITY (100,1)
 		NOT NULL
 		PRIMARY KEY
 	,Name
@@ -55,20 +58,30 @@ CREATE TABLE tb_Drug
 	,SalePrice--单价
 		MONEY
 	,Validity--有效期/月
-		INT)
+		INT
+	,MemoryCode
+		VARCHAR(20)
+		NULL
+	,DrugTypeNo
+		INT 
+		NULL
+	,SupplierNo
+		INT 
+		NULL)
 INSERT tb_Drug
-		(No,Name,RepertoryNo,Specifications,SKU,BatchNumber,ProduceDate,PurchasePrice,SalePrice,Validity)
+		(Name,RepertoryNo,Specifications,SKU,BatchNumber,ProduceDate,PurchasePrice,SalePrice,Validity,MemoryCode,DrugTypeNo,SupplierNo)
 		VALUES
-		('1000012345','5%葡萄糖(500ml)','0427000001','500ml','瓶','40001','2019-2-27',35.2,55.5,124),
-		('1000012346','亚硝酸钠','0427000002','500g','瓶','40002','2018-7-25',87.2,100,36),
-		('1000012347','安定片','0427000003','7.5mg*10片','片','40003','2019-10-4',0.25,0.5,12),
-		('1000012348','葡萄糖酸钙口服液','0427000004','10支/盒','盒','40004','2019-11-4',27.2,38.5,30)
+		('5%葡萄糖(500ml)','0427000001','500ml','瓶','40001','2019-2-27',35.2,55.5,124,'ptt',1,47),
+		('亚硝酸钠','0427000002','500g','瓶','40002','2018-7-25',87.2,100,36,'yxsn',1,49),
+		('安定片','0427000003','7.5mg*10片','片','40003','2019-10-4',0.25,0.5,12,'adp',1,48),
+		('葡萄糖酸钙口服液','0427000004','10支/盒','盒','40004','2019-11-4',27.2,38.5,30,'pttsgoky',2,45)
 	
 --库存
 DROP TABLE IF EXISTS tb_Repertory; 
 CREATE TABLE tb_Repertory
 	(No
-		CHAR(10)
+		INT
+		IDENTITY (50,1)
 		NOT NULL
 		PRIMARY KEY
 	,Count
@@ -87,85 +100,107 @@ CREATE TABLE tb_Repertory
 		DATE
 		NOT NULL)
 INSERT tb_Repertory
-		(No,Count,UpperLimit,LowerLimit,Cardinal,OutDate)
+		(Count,UpperLimit,LowerLimit,Cardinal,OutDate)
 		VAlUES
-		('0427000001',9800,30000,5000,8000,'2020-4-3'),
-		('0427000002',8600,20000,6000,9000,'2019-1-25'),
-		('0427000003',1000,15000,2000,1500,'2020-2-18'),
-		('0427000004',15000,12000,3000,2500,'2020-1-28')
+		(9800,30000,5000,8000,'2020-4-3'),
+		(8600,20000,6000,9000,'2019-1-25'),
+		(1000,15000,2000,1500,'2020-2-18'),
+		(15000,12000,3000,2500,'2020-1-28')
 
-USE DrugManagement
 --供应商
 DROP TABLE IF EXISTS tb_Supplier
 CREATE TABLE tb_Supplier
 		(No
-			CHAR(5)
+			INT
 			NOT NULL
+			IDENTITY(45,1)
 			PRIMARY KEY
 		,Name
 			VARCHAR(40)
 			NOT NULL)
 INSERT tb_Supplier
-		(No,Name)
+		(Name)
 		VALUES
-		('10001','六安市祥龙药业有限责任公司'),
-		('10002','山东联邦恒升医药有限公司'),
-		('10003','山东海健药业有限公司'),
-		('10004','江苏济源医药有限公司'),
-		('10005','湖南华阳制药有限公司'),
-		('10006','郑州国药大药房有限公司')
+		('六安市祥龙药业有限责任公司'),
+		('山东联邦恒升医药有限公司'),
+		('山东海健药业有限公司'),
+		('江苏济源医药有限公司'),
+		('湖南华阳制药有限公司'),
+		('郑州国药大药房有限公司')
 
 --药品类别
 DROP TABLE IF EXISTS tb_DrugType
 CREATE TABLE tb_DrugType
 		(No
-			CHAR(2)
+			INT
 			NOT NULL
+			IDENTITY(27,1)
 			PRIMARY KEY
 		,Name
 			VARCHAR(10)
 			NOT NULL)
 INSERT tb_DrugType
-		(No,Name)
+		(Name)
 		VALUES
-		('01','中药'),
-		('02','西药'),
-		('03','中成药')
+		('中药'),
+		('西药'),
+		('中成药')
 
 --付款方式
 DROP TABLE IF EXISTS tb_Payment
 CREATE TABLE tb_Payment
 		(No
-			CHAR(2)
+			INT
+			IDENTITY(1,1)
 			NOT NULL
 			PRIMARY KEY
 		,Name
 			VARCHAR(20)
 			NOT NULL)
 INSERT tb_Payment
-		(No,Name)
+		(Name)
 		VALUES
-		('01','微信'),
-		('02','支付宝'),
-		('03','现金'),
-		('04','银行转账')
+		('微信'),
+		('支付宝'),
+		('现金'),
+		('银行转账')
 
 DROP TABLE IF EXISTS tb_DetailOrder
 CREATE TABLE tb_DetailOrder
 		(No
-			CHAR(12)
+			INT
+			IDENTITY (1,1)
 			NOT NULL
-			PRIMARY KEY
+			PRIMARY KEY 
 		,DrugNo
-			CHAR(10)
+			INT
+			NOT NULL
+		,DrugTypeNo
+			INT
 			NOT NULL
 		,SupplierNo
-			CHAR(5)
+			INT
 			NOT NULL
 		,PaymentNo
-			CHAR(2)
-			NOT NULL)
+			INT
+			NOT NULL
+		,OrderDate
+			DATE
+			NULL
+		,IsChecked
+			BIT
+			NOT NULL
+		,PurchasePrice--进货价格
+			MONEY
+			NOT NULL
+		,DrugAmount
+			INT 
+			NOT NULL
+		,MemoryCode
+			VARCHAR(20)
+			NOT NULL
+		)
 INSERT tb_DetailOrder
-		(No,DrugNo,SupplierNo,PaymentNo)
+		(DrugNo,DrugTypeNo,SupplierNo,PaymentNo,OrderDate,IsChecked,PurchasePrice,DrugAmount,MemoryCode)
 		VALUES
-		('410822200101','1000012345','10002','02')
+		(101,27,46,2,'2021-1-2',0,48,10000,'ppt')
