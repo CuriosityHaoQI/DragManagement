@@ -32,6 +32,7 @@
             this.btn_Info = new System.Windows.Forms.Button();
             this.btn_Repertory = new System.Windows.Forms.Button();
             this.btn_Order = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_UserName
@@ -73,11 +74,22 @@
             this.btn_Order.UseVisualStyleBackColor = true;
             this.btn_Order.Click += new System.EventHandler(this.btn_Order_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(530, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 129);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "药品查询";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_ProjectSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1792, 990);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Order);
             this.Controls.Add(this.btn_Repertory);
             this.Controls.Add(this.btn_Info);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btn_Info;
         private System.Windows.Forms.Button btn_Repertory;
         private System.Windows.Forms.Button btn_Order;
+        private System.Windows.Forms.Button button1;
     }
 }

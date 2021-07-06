@@ -204,3 +204,74 @@ INSERT tb_DetailOrder
 		(DrugNo,DrugTypeNo,SupplierNo,PaymentNo,OrderDate,IsChecked,PurchasePrice,DrugAmount,MemoryCode)
 		VALUES
 		(101,27,46,2,'2021-1-2',0,48,10000,'ppt')
+		(102,28,48,1,'2021-4-5',1,35.2,8000,'NaNo2')
+DROP TABLE IF EXISTS tb_DrugFunction
+CREATE TABLE tb_DrugFuction
+		(FunNo
+			INT
+			IDENTITY (1,1)
+			NOT NULL
+			PRIMARY KEY 
+		,Name
+			VARCHAR(20)
+			NOT NULL
+		,DrugTypeNo
+			INT
+			NOT NULL)
+INSERT dbo.tb_DrugFuction
+		(Name,DrugTypeNo)
+		VALUES
+		('解表药',27),
+		('清热药',27),
+		('补虚药',27),
+		('抗生素药类',28),
+		('抗菌药',28),
+		('麻醉药',28),
+		('解表药',29),
+		('滋补药',29),
+		('活血化瘀药',29)
+
+DROP TABLE IF EXISTS tb_Drugs
+CREATE TABLE tb_Drugs
+		(DrugsNo
+			INT
+			IDENTITY (1,1)
+			NOT NULL
+			PRIMARY KEY 
+		,Name
+			VARCHAR(20)
+			NOT NULL
+		,DrugFunNo
+			INT
+			NOT NULL)	
+INSERT dbo.tb_Drugs
+		(Name,DrugFunNo)
+		VALUES
+		('银翘解毒丸',7),
+		('桑菊感冒片',7),
+		('二至丸',8),
+		('归脾丸',8),
+		('参苓白术丸',8),
+		('跌打丸',9),
+		('云南白药',9),
+		('金霉素',4),
+		('阿奇霉素',4),
+		('四环素',4),
+		('利巴韦林',5),
+		('利福平',5),
+		('青蒿素',5),
+		('利多卡因',6),
+		('硫喷妥钠',6),
+		('麻黄',1),
+		('辛夷',1),
+		('菊花',1),
+		('柴胡',1),
+		('桂枝',1),
+		('蒲公英',2),
+		('金银花',2),
+		('菊花',2),
+		('甘草',2),
+		('连翘',2),
+		('黄芪',1),
+		('当归',1),
+		('人参',1)

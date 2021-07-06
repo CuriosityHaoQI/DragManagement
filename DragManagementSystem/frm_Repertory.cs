@@ -60,7 +60,7 @@ namespace DragManagementSystem
                 "Server=(local);Database=DrugManagement;Integrated Security=sspi";
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = "SELECT D.No AS 药品标识码,D.Name AS 药品名称,d.Specifications AS 规格,D.SKU AS 库存单位,R.Count AS 库存数,R.LowerLimit AS 库存下限　FROM tb_Drug AS D JOIN tb_Repertory AS R ON D.RepertoryNo=R.No WHERE R.LowerLimit>R.Count;";
+            sqlCommand.CommandText = "SELECT D.No AS 药品标识码,D.Name AS 药品名称,d.Specifications AS 规格,D.SKU AS 库存单位,R.Count AS 库存数,R.LowerLimit AS 库存下限　FROM tb_Drug AS D JOIN tb_Repertory AS R ON D.RepertoryNo=R.No WHERE R.LowerLimit<R.Count;";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
             sqlDataAdapter.SelectCommand = sqlCommand;
             DataTable DrugCardinalTable = new DataTable();

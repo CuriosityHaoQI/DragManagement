@@ -49,5 +49,11 @@ namespace DragManagementSystem
             frm_PlanningOrder _PlanningOrder = new frm_PlanningOrder();
             _PlanningOrder.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_Drugs drugs = new frm_Drugs();
+            drugs.Show();
+        }
     }
 }
